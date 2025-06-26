@@ -69,7 +69,8 @@ document.addEventListener("DOMContentLoaded", () =>{
 	a.click();
 	URL.revokeObjectURL(url);
 
-	function populateCategories(categories){
+	function populateCategories(){
+		const categories = quoteObj.map(q => q.category.trim());
 		const categoryFilter = document.getElementById("categoryFilter");
 
 		categoryFilter.innerHTML = "";
