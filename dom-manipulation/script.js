@@ -59,4 +59,5 @@ document.addEventListener("DOMContentLoaded", () =>{
 		 };
     fileReader.readAsText(event.target.files[0]);
   }
+
 });
