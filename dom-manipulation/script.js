@@ -27,7 +27,23 @@ document.addEventListener("DOMContentLoaded", () =>{
 	});
 
 	function createAddQuoteForm(){
-		x
+
+		const newQuoteText = document.getElementById("newQuoteText");
+		const newQuoteCategory = document.getElementById("newQuoteCategory");
+		const newContainer = document.createElement("div");
+
+		document.body.appendChild(newContainer);
+		quote-add.addEventListener("click", (e) =>{
+			e.preventDefault();
+
+			const addedQuote = {
+				{text: newQuoteText.value, category: newQuoteCategory.value}
+			}
+
+			quoteObj.push(addedQuote);
+			newQuoteText.value = "";
+			newQuoteCategory.value = "";
+		}); 
 	}
 
 });
