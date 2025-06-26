@@ -46,7 +46,8 @@ document.addEventListener("DOMContentLoaded", () =>{
 		}); 
 	}
 
-	localStorage.setItem(quoteObj, quoteObj[]);
+	quoteObj = JSON.parse(localStorage.getItem(quoteObj));
+	localStorage.setItem("quoteObj", JSON.stringify(quoteObj));
 
 	 function importFromJsonFile(event) {
 		 const fileReader = new FileReader();
