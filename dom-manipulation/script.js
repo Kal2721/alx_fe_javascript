@@ -69,5 +69,20 @@ document.addEventListener("DOMContentLoaded", () =>{
 	a.click();
 	URL.revokeObjectURL(url);
 
+	function populateCategories(categories){
+		const categoryFilter = document.getElementById("categoryFilter");
+
+		categoryFilter.innerHTML = "";
+		categories.forEach(cata =>{
+			const categoryElement = document.createElement("div");
+			div.textContent = categoryElement.text;
+			div.textcontent = categoryElement.category;
+
+			categoryFilter.appendChild(categoryElement);
+		});
+
+
+	}
+
 
 });
