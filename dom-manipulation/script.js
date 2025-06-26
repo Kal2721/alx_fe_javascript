@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 		const randomIndex = Math.floor(Math.random() * quoteObj.length);
 		const randomObject = quoteObj[randomIndex];
 
-		quote-display.textcontent = `"$quoteObj.text" - $quoteObj.category`;
+		quote-display.innerHTML = `"$quoteObj.text" - $quoteObj.category`;
 	}
 
 	newQuote.addEventListener("click", () => {
