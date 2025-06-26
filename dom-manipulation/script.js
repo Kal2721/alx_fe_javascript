@@ -60,4 +60,14 @@ document.addEventListener("DOMContentLoaded", () =>{
     fileReader.readAsText(event.target.files[0]);
   }
 
+	const jsonString = JSON.stringfy(quoteObj, null, 2);
+	const blob = new Blob([jsonString], {type: 'application/json' });
+	const url = URL.createObjectURL(blob);
+	const a = document.createElement('a');
+	a.href = url;
+	a.download ='quoteObj.json';
+	a.click();
+	URL.revokeObjectURL(url);
+
+
 });
