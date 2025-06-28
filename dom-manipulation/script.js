@@ -75,9 +75,9 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 		categoryFilter.innerHTML = "";
 		categories.forEach(cata =>{
-			const categoryElement = document.createElement("div");
-			div.textContent = categoryElement.text;
-			div.textcontent = categoryElement.category;
+			const categoryElement = document.getElementByTagName("option");
+			categoryElement.textContent = categoryElement.text;
+			categoryElement.textcontent = categoryElement.category;
 
 			categoryFilter.appendChild(categoryElement);
 		});
