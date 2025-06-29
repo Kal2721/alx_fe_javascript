@@ -105,7 +105,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 	}
 
 	try{
-		const response = await fetch('https://jsonplaceholder.typicode.com/post'){
+		const response = await fetch('https://jsonplaceholder.typicode.com/posts'){
 			method: 'POST',
 			body: JSON.stringify({
 				title: newQuoteText.text;
@@ -127,7 +127,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 	async function fetchQuotesFromServer(){
 		try{
-			const response = await fetch('https://jsonplaceholder.typicode.com/post');
+			const response = await fetch('https://jsonplaceholder.typicode.com/posts');
 			const data = await response.json();
 
 			const serverQuotes = data.slice(0, 10).map(post =>({
