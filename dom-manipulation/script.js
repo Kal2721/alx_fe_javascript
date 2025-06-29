@@ -97,4 +97,49 @@ document.addEventListener("DOMContentLoaded", () =>{
 	createAddQuoteForm();
 	populateCategories();
 	filterQuotes();
+
+	let quotes = [];
+
+	if (quoteObj){
+		quotes = quoteObj;
+	}
+
+	try{
+		const response = await fetch('https://jsonplaceholder.typicode.com/post'){
+			method: 'POST',
+			body: JSON.stringify({
+				title: newQuoteText.text;
+				userId: newQuoteCategory.category;
+
+			}),
+			headers: {
+				'Content-type': 'application/json; charset=UTF-8',
+			},
+		});
+
+		const result = await response.json();
+
+		console.log('Posted to API', result);
+		alert("Quote added and posted to API");
+	}catch (err){
+		console.error("Error", err);
+	}
+
+	async function syncQuotes(){
+		try{
+			const response = await fetch('https://jsonplaceholder.typicode.com/post');
+			const data = await response.json();
+
+			const serverQuotes = data.slice(0, 10).map(post =>({
+				text: post.title,
+				category; "mock" + post.userId
+			}));
+
+			quotes = serverQuotes;
+			populateCategories();
+			console.log("Quotes has been updated");
+		}catch (err){
+			console.log("Error", err);
+		}
+	}
 });
