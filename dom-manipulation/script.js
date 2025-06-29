@@ -81,9 +81,17 @@ document.addEventListener("DOMContentLoaded", () =>{
 
 			categoryFilter.appendChild(categoryElement);
 		});
-
-
 	}
 
+	categoryFilter = document.getElementById("categoryFilter").value;
+
+	function filterQuotes(){
+		const filteredQuotes = quoteObj.filter(q =>q.category);
+
+		if (filteredQuotes.length > 0){
+			const randomQuote = filteredQuotes[Math.floor(Math.radom() * filteredQuotes.length)];
+			qoute-display.innerHTML = `"${randomQuote.text}" - ${randomQuote.category}`;
+
+	}
 
 });
