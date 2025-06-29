@@ -125,7 +125,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 		console.error("Error", err);
 	}
 
-	async function syncQuotes(){
+	async function fetchQuotesFromServer(){
 		try{
 			const response = await fetch('https://jsonplaceholder.typicode.com/post');
 			const data = await response.json();
@@ -142,4 +142,5 @@ document.addEventListener("DOMContentLoaded", () =>{
 			console.log("Error", err);
 		}
 	}
+	fetchQuotesFromServer();
 });
