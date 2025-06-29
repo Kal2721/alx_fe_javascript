@@ -98,34 +98,35 @@ document.addEventListener("DOMContentLoaded", () =>{
 	populateCategories();
 	filterQuotes();
 
-	let quotes = [];
-
-	if (quoteObj){
-		quotes = quoteObj;
-	}
-
-	try{
-		const response = await fetch('https://jsonplaceholder.typicode.com/posts'){
-			method: 'POST',
-			body: JSON.stringify({
-				title: newQuoteText.text;
-				userId: newQuoteCategory.category;
-
-			}),
-			headers: {
-				'Content-Type': 'application/json; charset=UTF-8',
-			},
-		});
-
-		const result = await response.json();
-
-		console.log('Posted to API', result);
-		alert("Quote added and posted to API");
-	}catch (err){
-		console.error("Error", err);
-	}
-
 	async function fetchQuotesFromServer(){
+
+		let quotes = [];
+		if (quoteObj){
+			quotes = quoteObj;
+		}
+
+		try{
+			const response = await fetch('https://jsonplaceholder.typicode.com/posts'){
+				method: 'POST',
+				body: JSON.stringify({
+					title: newQuoteText.text;
+					userId: newQuoteCategory.category;
+				}),
+				headers: {
+					'Content-Type': 'application/json; charset=UTF-8',
+				},
+			});
+			
+			const result = await response.json();
+
+			console.log('Posted to API', result);
+			alert("Quote added and posted to API");
+		}catch (err){
+			console.error("Error", err);
+		}	
+	}
+
+	async function syncQuotes()fetchQuotesFromServer(){
 		try{
 			const response = await fetch('https://jsonplaceholder.typicode.com/posts');
 			const data = await response.json();
