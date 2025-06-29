@@ -144,4 +144,6 @@ document.addEventListener("DOMContentLoaded", () =>{
 		}
 	}
 	fetchQuotesFromServer();
+
+	setInterval(syncQuotes, 200000);
 });
