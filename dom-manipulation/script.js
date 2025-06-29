@@ -139,6 +139,7 @@ document.addEventListener("DOMContentLoaded", () =>{
 			quotes = serverQuotes;
 			populateCategories();
 			console.log("Quotes has been updated");
+			alert("Quotes synced with server!")
 		}catch (err){
 			console.log("Error", err);
 		}
